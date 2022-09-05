@@ -1,0 +1,190 @@
+<script >
+let score=0
+let started=false
+let choices=["rock","paper","scissors"]
+var userChoice,cpuChoice
+function startGame()
+{
+let rockButton=document.getElementById("rock")
+let paperButton=document.getElementById("paper")
+let scissorsButton=document.getElementById("scissors")
+started=true;
+if(started)
+{rockButton.disabled=false
+paperButton.disabled=false
+scissorsButton.disabled=false}
+}
+function rockSelected()
+{
+let rockButton=document.getElementById("rock")
+let scoreElement=document.getElementById("score")
+let playElement=document.getElementById("play")
+userChoice="rock";
+cpuChoice=choices[Math.floor(Math.random() * 3)]
+if(cpuChoice==="scissors")
+{score++
+scoreElement.textContent="Score: "+score
+scoreElement.style.fontWeight="bold"
+scoreElement.style.fontSize="50px"
+playElement.textContent="CPU played : "+cpuChoice
+playElement.style.fontWeight="bold"
+playElement.style.fontSize="30px"
+playElement.style.backgroudColor="white"
+}
+else if(cpuChoice==="paper")
+{playElement.textContent="CPU played : "+cpuChoice
+playElement.style.fontWeight="bold"
+playElement.style.fontSize="30px"
+playElement.style.backgroudColor="white"
+alert("Your Final  Score is : "+score)
+score=0
+scoreElement.textContent="Score: "+score
+scoreElement.style.fontWeight="bold"
+scoreElement.style.fontSize="50px"
+
+disableButtons()}
+else
+{playElement.textContent="CPU played : "+cpuChoice
+playElement.style.fontWeight="bold"
+playElement.style.fontSize="30px"
+playElement.style.backgroudColor="white"}
+ }
+ function paperSelected()
+{
+let paperButton=document.getElementById("paper")
+let scoreElement=document.getElementById("score")
+let playElement=document.getElementById("play")
+userChoice="paper";
+cpuChoice=choices[Math.floor(Math.random() * 3)]
+if(cpuChoice==="rock")
+{score++
+scoreElement.textContent="Score: "+score
+scoreElement.style.fontWeight="bold"
+scoreElement.style.fontSize="50px"
+playElement.textContent="CPU played : "+cpuChoice
+playElement.style.fontWeight="bold"
+playElement.style.fontSize="30px"
+playElement.style.backgroudColor="white"}
+else if(cpuChoice==="scissors")
+{playElement.textContent="CPU played : "+cpuChoice
+playElement.style.fontWeight="bold"
+playElement.style.fontSize="30px"
+playElement.style.backgroudColor="white"
+alert("Your Final  Score is : "+score)
+score=0
+scoreElement.textContent="Score: "+score
+scoreElement.style.fontWeight="bold"
+scoreElement.style.fontSize="50px"
+
+disableButtons()}
+else
+{playElement.textContent="CPU played : "+cpuChoice
+playElement.style.fontWeight="bold"
+playElement.style.fontSize="30px"
+playElement.style.backgroudColor="white"}
+ }
+ function scissorsSelected()
+{
+let scissorsButton=document.getElementById("scissors")
+let scoreElement=document.getElementById("score")
+let playElement=document.getElementById("play")
+userChoice="scissors";
+cpuChoice=choices[Math.floor(Math.random() * 3)]
+if(cpuChoice==="paper")
+{score++
+scoreElement.textContent="Score: "+score
+scoreElement.style.fontWeight="bold"
+scoreElement.style.fontSize="50px"
+playElement.textContent="CPU played : "+cpuChoice
+playElement.style.fontWeight="bold"
+playElement.style.fontSize="30px"
+playElement.style.backgroudColor="white"}
+else if(cpuChoice==="rock")
+{playElement.textContent="CPU played : "+cpuChoice
+playElement.style.fontWeight="bold"
+playElement.style.fontSize="30px"
+playElement.style.backgroudColor="white"
+alert("Your Final  Score is : "+score)
+score=0
+scoreElement.textContent="Score: "+score
+scoreElement.style.fontWeight="bold"
+scoreElement.style.fontSize="50px"
+disableButtons()}
+else
+{playElement.textContent="CPU played : "+cpuChoice
+playElement.style.fontWeight="bold"
+playElement.style.fontSize="30px"
+playElement.style.backgroudColor="white"}
+ }
+function disableButtons()
+{
+let rockButton=document.getElementById("rock")
+let paperButton=document.getElementById("paper")
+let scissorsButton=document.getElementById("scissors")
+let playElement=document.getElementById("play")
+rockButton.disabled=true
+paperButton.disabled=true
+scissorsButton.disabled=true
+playElement.textContent="CPU played :"
+playElement.style.fontWeight="bold"
+playElement.style.fontSize="30px"
+playElement.style.backgroudColor="white"
+
+
+
+}
+
+</script>
+<html>
+<body>
+<h1>ROCK PAPER SCISSORS</h1>
+<table>
+<div style="text-align:center;">
+<span style="text-align:center; font-weight:bold;background-color:lightblue;font-size:30px">RULES:
+CLICK ON START GAME TO START THE GAME AND SELECT YOUR CHOICE...
+AND LET'S SEE IF YOU CAN COMPETE WITH THE COMPUTER..</span>
+</div><br>
+</table>
+<table style=" margin-left: auto;
+  margin-right: auto;">
+<tr>
+<td>
+<button id="rock" onclick="rockSelected()" disabled><img src="data:image/jpeg;base64,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"
+style="height:150px;width:150px"></button>
+<p style="text-align:center; font-weight:bold;background-color:white;border:2px solid">ROCK</p></td>
+<td>
+<button id="paper" onclick="paperSelected()" disabled><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLm898iqwH6eeaphT1nYJEjuCXnGhnDJ9QqQ&usqp=CAU"
+style="height:150px;width:150px"></button>
+<p style="text-align:center; font-weight:bold;background-color:white;border:2px solid">PAPER</p></td>
+<td>
+<td>
+<button id="scissors" onclick="scissorsSelected()" disabled><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Scissors_icon_black.svg/2560px-Scissors_icon_black.svg.png"
+style="height:150px;width:150px"></button>
+<p style="text-align:center; font-weight:bold;background-color:white;border:2px solid">SCISSORS</p></td>
+<td>
+</tr>
+<tr>
+<div id="score" ><span style="font-weight:bold;font-size:50px" >Score:0</span></div>
+</tr>
+<tr><button id="start" onclick="startGame()" style="width:160px;height:50px;font-size:20px;font-weight:bold;background-color:maroon;">START GAME</button></tr>
+</table>
+<p style="text-align:center"><span style="text-align:center;font-weight:bold;font-size:30px;background-color:white" id="play">CPU played :</span></p>
+</body>
+</html>
+<style>
+body{
+background-image:url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/people-playing-paper-rock-scissors-royalty-free-illustration-1583269312.jpg?crop=0.994xw:0.799xh;0.00160xw,0.195xh&resize=2048:*")
+}
+h1
+{
+font-family: "Lucida Console", "Courier New", monospace;
+text-align:center;
+font-size:150px;
+background-color:white;
+text-shadow: 10px 10px grey;
+border-style:  solid ;
+}
+td
+{
+padding: 0 5px;}
+</style>
